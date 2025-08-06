@@ -1,30 +1,34 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
   <title>Escolha o Tamanho</title>
-  <link rel="stylesheet" href="tamanho.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Monte seu Pedido</h1>
-    <p>Passo 2: Escolha o tamanho</p>
-  </header>
+  <main class="container">
+    <h1>Qual o tamanho?</h1>
+    <p>Selecione o tamanho do seu pedido:</p>
 
-  <section class="escolha-tamanho">
-    <h2>Qual tamanho você quer?</h2>
+    <section class="opcoes" id="opcoes-tamanho">
+      <div class="opcao" data-valor="Pequeno">
+        <img src="img/tamanho-pequeno.png" alt="Tamanho Pequeno">
+        <p>Pequeno</p>
+      </div>
+      <div class="opcao" data-valor="Médio">
+        <img src="img/tamanho-medio.png" alt="Tamanho Médio">
+        <p>Médio</p>
+      </div>
+      <div class="opcao" data-valor="Grande">
+        <img src="img/tamanho-grande.png" alt="Tamanho Grande">
+        <p>Grande</p>
+      </div>
+    </section>
 
-    <div id="opcoes-tamanho" class="grid-produtos">
-      <!-- Opções vão ser inseridas aqui pelo JS -->
-    </div>
+    <p class="erro" id="mensagem-erro"></p>
 
-    <!-- Mensagem de erro -->
-    <p id="mensagem-erro" class="mensagem-erro">Por favor, selecione um tamanho antes de continuar.</p>
-
-    <!-- Botão avançar -->
     <button id="btn-avancar" class="botao-avancar">Avançar</button>
-  </section>
+  </main>
 
   <script src="tamanho.js"></script>
 </body>
