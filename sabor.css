@@ -1,0 +1,46 @@
+.opcoes-sabores {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.card-sabor {
+  border: 2px solid transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  width: 140px;
+  transition: 0.3s;
+}
+
+.card-sabor input {
+  display: none;
+}
+
+.card-sabor img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.card-sabor span {
+  display: block;
+  padding: 0.5rem;
+  font-weight: bold;
+  background-color: #f8f8f8;
+}
+
+.card-sabor.selecionado {
+  border-color: var(--roxo);
+  box-shadow: 0 0 10px var(--roxo-claro);
+}
+
+.erro {
+  color: red;
+  text-align: center;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
