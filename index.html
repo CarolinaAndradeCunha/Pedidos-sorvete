@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Monte seu Pedido</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Monte seu Pedido</h1>
+    <p>Passo 1: Escolha o tipo de produto</p>
+  </header>
+
+  <section class="escolha-produto">
+    <h2>O que você quer pedir?</h2>
+
+    <div class="grid-produtos">
+      <label class="card-produto">
+        <input type="radio" name="produto" value="Açaí" hidden />
+        <img src="img/acai.jpg" alt="Açaí" />
+        <span>Açaí</span>
+      </label>
+
+      <label class="card-produto">
+        <input type="radio" name="produto" value="Sorvete" hidden />
+        <img src="img/sorvete.jpg" alt="Sorvete" />
+        <span>Sorvete</span>
+      </label>
+
+      <label class="card-produto">
+        <input type="radio" name="produto" value="Milkshake" hidden />
+        <img src="img/milkshake.jpg" alt="Milkshake" />
+        <span>Milkshake</span>
+      </label>
+    </div>
+
+    <!-- Mensagem de erro -->
+    <p id="mensagem-erro" class="mensagem-erro">Por favor, selecione um produto antes de continuar.</p>
+
+    <!-- Botão avançar -->
+    <button id="btn-avancar" class="botao-avancar">Avançar</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
