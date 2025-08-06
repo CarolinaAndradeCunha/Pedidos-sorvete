@@ -1,38 +1,24 @@
-<!-- resumo.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Resumo do Pedido</title>
-  <link rel="stylesheet" href="resumo.css">
+  <link rel="stylesheet" href="resumo.css" />
 </head>
 <body>
-  <main class="container">
+  <div class="container">
     <h1>Resumo do Pedido</h1>
+    <div class="resumo-item"><strong>Tipo:</strong> <span id="tipo"></span></div>
+    <div class="resumo-item"><strong>Tamanho:</strong> <span id="tamanho"></span></div>
+    <div class="resumo-item"><strong>Sabores:</strong> <span id="sabores"></span></div>
+    <div class="resumo-item"><strong>Cobertura:</strong> <span id="cobertura"></span></div>
 
-    <div class="resumo-item">
-      <span><strong>Tipo:</strong> <span id="resumo-tipo"></span></span>
-      <button onclick="alterarEtapa('index.html')">Alterar</button>
+    <div class="opcoes">
+      <button id="editar">Editar Pedido</button>
+      <button id="confirmar">Confirmar Pedido</button>
     </div>
-
-    <div class="resumo-item">
-      <span><strong>Tamanho:</strong> <span id="resumo-tamanho"></span></span>
-      <button onclick="alterarEtapa('tamanho.html')">Alterar</button>
-    </div>
-
-    <div class="resumo-item">
-      <span><strong>Sabores:</strong> <span id="resumo-sabores"></span></span>
-      <button onclick="alterarEtapa('sabores.html')">Alterar</button>
-    </div>
-
-    <div class="resumo-item">
-      <span><strong>Acompanhamentos:</strong> <span id="resumo-acompanhamentos"></span></span>
-      <button onclick="alterarEtapa('acompanhamentos.html')">Alterar</button>
-    </div>
-
-    <button class="confirmar" onclick="confirmarPedido()">Confirmar Pedido</button>
-  </main>
+  </div>
 
   <script src="resumo.js"></script>
 </body>
