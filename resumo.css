@@ -1,0 +1,80 @@
+:root {
+  --roxo: #6a0dad;
+  --roxo-claro: #e8d4f7;
+  --branco: #ffffff;
+  --cinza: #f2f2f2;
+  --sombra: rgba(0, 0, 0, 0.1);
+  --fonte: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: var(--fonte);
+  background-color: var(--roxo-claro);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: var(--branco);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px var(--sombra);
+  max-width: 500px;
+  width: 100%;
+  margin-top: 4rem;
+}
+
+h1 {
+  text-align: center;
+  color: var(--roxo);
+  margin-bottom: 1.5rem;
+}
+
+.resumo-item {
+  margin-bottom: 1rem;
+  background-color: var(--cinza);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.resumo-item strong {
+  color: var(--roxo);
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  background-color: var(--roxo);
+  color: var(--branco);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #580b94;
+}
+
+.opcoes {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+button#editar {
+  background-color: #ccc;
+  color: #000;
+}
+
+button#editar:hover {
+  background-color: #aaa;
+}
