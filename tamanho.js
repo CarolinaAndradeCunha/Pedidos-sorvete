@@ -8,37 +8,51 @@ let pedido = JSON.parse(localStorage.getItem('pedido'));
 
 if (!pedido || !pedido.produto) {
   alert('Nenhum produto selecionado! Voltando para a página inicial.');
-  window.location.href = 'index.html';  // página inicial do pedido
+  window.location.href = 'index.html'; // página inicial do pedido
 }
 
 // opções dinâmicas conforme produto escolhido
 const opcoesPorProduto = {
-  'Sorvete': ['Casquinha', 'Cascão', 'Copinho'],
-  'Açaí': ['Copo 300ml', 'Copo 500ml', 'Copo 1L'],
-  'Milkshake': ['Copo 300ml', 'Copo 500ml', 'Copo 1L']
+  'Sorvete': [
+    { nome: 'Casquinha', imagem: 'casquinha.jpg' },
+    { nome: 'Cascão', imagem: 'cascade.jpg' },
+    { nome: 'Copinho', imagem: 'copinho.jpg' }
+  ],
+  'Açaí': [
+    { nome: 'Copo 300ml', imagem: 'copo300ml.jpg' },
+    { nome: 'Copo 500ml', imagem: 'copo500ml.jpg' },
+    { nome: 'Copo 1L', imagem: 'copo1l.jpg' }
+  ],
+  'Milkshake': [
+    { nome: 'Copo 300ml', imagem: 'milk300.jpg' },
+    { nome: 'Copo 500ml', imagem: 'milk500.jpg' },
+    { nome: 'Copo 1L', imagem: 'milk1l.jpg' }
+  ]
 };
 
 // pega as opções corretas
 const opcoes = opcoesPorProduto[pedido.produto];
 
 // função para criar o HTML das opções
-function criarOpcaoTamanho(nome) {
-  // criar label com input radio, imagem fake só pra manter padrão, e texto
-  // você pode trocar as imagens depois, por enquanto só texto
-
+function criarOpcaoTamanho(opcao) {
   const label = document.createElement('label');
   label.className = 'card-produto';
 
   const input = document.createElement('input');
   input.type = 'radio';
   input.name = 'tamanho';
-  input.value = nome;
+  input.value = opcao.nome;
   input.hidden = true;
 
+  const imagem = document.createElement('img');
+  imagem.src = `img/tamanhos/${opcao.imagem}`;
+  imagem.alt = opcao.nome;
+
   const span = document.createElement('span');
-  span.textContent = nome;
+  span.textContent = opcao.nome;
 
   label.appendChild(input);
+  label.appendChild(imagem);
   label.appendChild(span);
 
   return label;
@@ -57,17 +71,15 @@ btnAvancar.addEventListener('click', () => {
 
   if (!selecionado) {
     mensagemErro.style.display = 'block';
+    mensagemErro.textContent = 'Por favor, selecione um tamanho antes de continuar.';
   } else {
     mensagemErro.style.display = 'none';
 
-    // pega o tamanho selecionado
     const tamanhoSelecionado = document.querySelector('input[name="tamanho"]:checked').value;
 
-    // salva no pedido
     pedido.tamanho = tamanhoSelecionado;
     localStorage.setItem('pedido', JSON.stringify(pedido));
 
-    // redireciona para a próxima página (exemplo: sabor.html)
     window.location.href = 'sabor3.html';
   }
 });
